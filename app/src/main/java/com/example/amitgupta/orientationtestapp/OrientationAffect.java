@@ -20,9 +20,12 @@ public class OrientationAffect extends Activity{
         editTextName = (EditText) findViewById(R.id.editTextName);
         textViewName = (TextView) findViewById(R.id.textViewName);
 
-        //assert  textViewName !=null;
-        //textViewName.setText(savedInstanceState.getString("saveOrientationName"));
+        // Used to get data from Main Class.
+      /*  MainActivity m = new MainActivity();
+        m.test();*/
 
+        String nameFromMainActivity= this.getIntent().getStringExtra("editTextName");
+        textViewName.setText(nameFromMainActivity);
         editTextName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {   //To know the view that was clicked
