@@ -19,6 +19,17 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextName;
     TextView textViewName;
     Button buttonOrientation;
+    int n;
+
+    // I am using this to pass data from ONE class to Another as in Java.
+    // But Try this APPROACH
+    //USE the Intent Approach
+    // intent.putExtra("key",value);
+    /*public  void test(){
+        System.out.println("Main Called");
+    }*/
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,OrientationAffect.class);
+                i.putExtra("editTextName",editTextName.getText().toString());
                 startActivity(i);
             }
         });
